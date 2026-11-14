@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Homework Tracker</title>
+<title>WFHC — Website for Homework Control</title>
 <style>
   :root{
     --bg:#faf7f8; --card:#fff; --ink:#1c2230; --muted:#6b7280; --line:#e5e7eb;
@@ -45,7 +45,8 @@
   .ok-msg{color:var(--ok);font-weight:600}
   .auth{max-width:400px;margin:40px auto}
   .hero{text-align:center;padding:26px 0 4px}
-  .hero h1{font-size:28px;margin:0 0 6px;color:var(--brand)}
+  .hero h1{font-size:40px;letter-spacing:2px;margin:0 0 6px;color:var(--brand)}
+  .hero-sub{font-weight:700;letter-spacing:.3px;margin-bottom:10px}
   .hero p{margin:0 auto;max-width:520px;color:var(--muted)}
   .landing .auth{margin:20px auto 34px}
   .section-title{text-align:center;font-size:22px;margin:10px 0 16px;color:var(--brand)}
@@ -204,7 +205,7 @@ const TEACHERS = [
       "Got CEFR C1 at 15, on the first attempt",
       "Has been learning English for 5 years",
       "1 year as a support teacher with Muattar Teacher",
-      "16 years old · Owner of WFVC"
+      "16 years old · Founder of WFVC and WFHC"
     ],
     helpsTitle: "How he helps you",
     helps: [
@@ -480,7 +481,7 @@ function shell(inner) {
   app.innerHTML = `
     ${DEMO ? `<div class="demo-bar">Demo mode — sample data, nothing is saved. Add your Firebase settings to go live.</div>` : ""}
     <header class="top"><div class="wrap">
-      <div class="logo"><i>✓</i>Homework Tracker</div><div class="spacer"></div>
+      <div class="logo"><i>✓</i>WFHC</div><div class="spacer"></div>
       ${me ? `<div class="who">${esc(me.name)}<br><span>${me.teacher ? "Teacher" : "Student"}</span></div>
       <button class="btn sm" id="logout">Sign out</button>` : ""}
     </div></header>
@@ -501,7 +502,7 @@ function teacherCard(t) {
 }
 function renderAuth(mode = "in") {
   shell(`<div class="landing">
-  <div class="hero"><h1>Homework Tracker</h1><p>Upload your homework before the deadline and see that it arrived. Sign in or create an account to start.</p></div>
+  <div class="hero"><h1>WFHC</h1><div class="hero-sub">Website for Homework Control</div><p>Upload your homework before the deadline and see that it arrived. Sign in or create an account to start.</p></div>
   <div class="auth card">
     <div class="tabs"><button data-m="in" class="${mode === "in" ? "on" : ""}">Sign in</button><button data-m="up" class="${mode === "up" ? "on" : ""}">Create account</button></div>
     <form id="authForm">
